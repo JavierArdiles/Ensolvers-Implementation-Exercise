@@ -6,12 +6,14 @@ import { getFolders } from "../../actions";
 
 export default function Home(){
     const dispatch = useDispatch();
-    const allFolders = useSelector((state) => state.folders);
-
+    
     useEffect(() => {
         dispatch(getFolders());
-    });
+    }, [dispatch]);
 
+    const allFolders = useSelector((state) => state.folders);
+    console.log('allFolders', allFolders);
+    
     return (
         <div>
             Home
@@ -19,7 +21,10 @@ export default function Home(){
                 allFolders && allFolders.length > 0 && allFolders.map((el, i) => {
                     return (
                         <div key={i}>
-                            <Folder/> {i}
+                            <Folder
+                                name={el.name}
+                                id={el.id}
+                            />
                         </div>
                     )
                 })

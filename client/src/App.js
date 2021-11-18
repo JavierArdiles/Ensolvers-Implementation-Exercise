@@ -1,6 +1,7 @@
 import './App.css';
-import { BrowserRouter, Route } from 'react-router-dom';
-import { Routes } from 'react-router';
+import React from 'react';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+// import { Routes } from 'react-router';
 import Home from './components/Home/Home';
 
 function App() {
@@ -8,10 +9,8 @@ function App() {
     <BrowserRouter>
       <div className="App">
         <Routes>
-          <Route exact path='/' element={<Home/>}>
-            <Home/>
-            </Route>
-          </Routes>
+          <Route exact path='/' element={<Home/>} />
+        </Routes>
       </div>
     </BrowserRouter>
   );

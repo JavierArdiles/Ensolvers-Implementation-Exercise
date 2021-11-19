@@ -1,11 +1,12 @@
 import {
     GET_FOLDERS,
-    GET_TODOS_OF_FOLDER
+    GET_TODOS,
+    DELETE_TODO
 } from '../actions';
 
 const initialState = {
     folders: [],
-    todosByFolder: {},
+    todos: [],
 }
 
 function rootReducer(state = initialState, action){
@@ -17,14 +18,10 @@ function rootReducer(state = initialState, action){
                 folders: action.payload
             }
         
-        case GET_TODOS_OF_FOLDER:
-            let folder = state.folders.find(el => el.id === action.payload[1]);
-            let folderName = folder.name;
+        case GET_TODOS:
             return {
                 ...state,
-                todosByFolder: {
-                    [folderName]: action.payload[0]
-                }
+                todos: action.payload
             }
             
         default: return state;

@@ -1,9 +1,9 @@
 const { Folder, Todo } = require('../db');
-const { getTodos } = require('./Todo');
 
 const postFolder = async (req, res, next) => {
     try{
         let { name } = req.body;
+        console.log(name);
         let existingFolder = await Folder.findOne({
             where: {
                 name,
@@ -53,8 +53,26 @@ const deleteFolder = async (req, res, next) => {
     }
 }
 
+const editFolder = (req, res, next) => {
+        let { newName, id } = req.body;
+        let objectUpdate = {
+            name: newName
+        };
+        Folder.update(
+            objectUpdate,
+            {
+                where: {
+                    id
+                }
+            }
+        ).then(() => {
+            res.status(200).send('Folder name successfully updated to "' + newName + '"')
+        }).catch((err) => next(err));
+}
+
 module.exports = {
     postFolder,
     getFolders,
     deleteFolder,
+    editFolder,
 }

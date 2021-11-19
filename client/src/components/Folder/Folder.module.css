@@ -1,0 +1,23 @@
+.folder{
+    display: flex;
+    flex-direction: column;
+    background-color: #f1bf98;
+    border: none;
+    border-radius: 10px;
+    width: 95%;
+    margin-left: 2.5%;
+    margin-top: 30px;
+}
+
+.title{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.title h1{
+    margin-left: 3%;
+}
+
+.btnsCont{
+    display: flex;
+}

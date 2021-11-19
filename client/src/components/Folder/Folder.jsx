@@ -58,9 +58,9 @@ export default function Folder({ name, id }) {
             <div className={styles.title}>
                 <h1>{name}</h1>
                 <div className={styles.btnsCont}>
-                    <button><MdModeEditOutline /></button>
+                    {/* <button><MdModeEditOutline /></button> */}
                     <button onClick={() => setShow(true)}><MdPlaylistAdd /></button>
-                    <button><MdDelete /></button>
+                    {/* <button><MdDelete /></button> */}
                 </div>
             </div>
             {

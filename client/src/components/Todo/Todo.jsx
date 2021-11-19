@@ -8,8 +8,8 @@ export default function Todo({name}){
             <input
                 type='checkbox'
             />
-            <button><MdModeEditOutline/></button>
-            <button><MdDelete/></button>
+            {/* <button><MdModeEditOutline/></button> */}
+            {/* <button><MdDelete/></button> */}
         </div>
     )
 }
